@@ -1,2 +1,5 @@
-/* You can add global styles to this file, and also import other style files */
-@import './scss/themes/colors';
+@import "./scss/base/index";
+@import "./scss/themes/index";
+@import "./scss/components/index";
+@import "./scss/utilities/index";
+@import "./scss/vendors/index";

@@ -1,0 +1,48 @@
+* {
+  font-family: "Public Sans", sans-serif;
+  color: var(--theme-terciary-color);
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background: var(--theme-background-color);
+  font-size: 14px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 0.75em;
+  color: var(--theme-foreground-color);
+}
+
+h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 12px;
+  margin-bottom: 25px;
+  color: var(--theme-foreground-color);
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 600;
+}

@@ -1,0 +1,18 @@
+form td-input-text {
+  input,
+  select {
+    border-radius: 5px;
+    border: none;
+    height: 3em;
+    width: 100%;
+    padding: 0 1em;
+    font-size: 16px;
+    font-weight: 400;
+    margin-bottom: 0.5em;
+    outline: none;
+
+    &:focus {
+      border: 2px solid var(--theme-secondary-color);
+    }
+  }
+}

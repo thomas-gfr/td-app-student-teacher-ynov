@@ -1,13 +1,38 @@
-<section class="loginInfo">
-    <content>
+<div class="signin-wrapper page-wrapper">
+  <section class="loginInfo">
+    <div class="card">
+      <content>
         <form [formGroup]="signInForm" (keyup.enter)="login()">
-            <td-input-text [placeholder]="'Identifiant'" [abstractControl]="signInForm.controls.username"> </td-input-text>
-            <td-input-text [placeholder]="'Mot de passe'" [type]="'password'" [abstractControl]="signInForm.controls.password"> </td-input-text>
-            <div *ngIf="isAlert" role="alert">
-                {{ errorMessage }}
-            </div>
-            <td-button icon="icon-key" [label]="'Se connecter'" [isLoading]="isLoading" class="signin noBorder" (emitOnClick)="login()"> </td-button>
-            <td-button [label]="'Mot de passe oublié'" class="forgotPassword link" (emitOnClick)="forgotPassword()"> </td-button>
+          <td-input-text
+            [placeholder]="'Identifiant'"
+            [abstractControl]="signInForm.controls.username"
+          >
+          </td-input-text>
+          <td-input-text
+            [placeholder]="'Mot de passe'"
+            [type]="'password'"
+            [abstractControl]="signInForm.controls.password"
+          >
+          </td-input-text>
+          <div *ngIf="isAlert" role="alert">
+            {{ errorMessage }}
+          </div>
+          <td-button
+            icon="icon-key"
+            [label]="'Se connecter'"
+            [isLoading]="isLoading"
+            class="signin noBorder"
+            (emitOnClick)="login()"
+          >
+          </td-button>
+          <td-button
+            [label]="'Mot de passe oublié'"
+            class="forgotPassword link"
+            (emitOnClick)="forgotPassword()"
+          >
+          </td-button>
         </form>
-    </content>
-</section>
+      </content>
+    </div>
+  </section>
+</div>
