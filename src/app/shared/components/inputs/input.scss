@@ -1,0 +1,265 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+
+    label {
+        font-family: var(--font-main-bold);
+        font-size: var(--font-size-mini);
+        text-transform: uppercase;
+    }
+
+    .p-inputgroup {
+        position: relative;
+        height: var(--form-field-height);
+        border: var(--form-field-border-width) solid var(--form-field-border);
+        border-radius: var(--form-field-border-radius);
+        overflow: hidden;
+        display: flex;
+        flex-direction: var(--form-field-direction);
+        align-items: center;
+        font-size: var(--font-size-mini);
+        font-family: var(--font-main-bold);
+        background: var(--form-field-background);
+        max-width: 100%;
+
+        textarea,
+        input {
+            background: var(--form-field-background);
+            border-radius: 0;
+            border: none;
+            outline: none;
+            width: 100%;
+            min-width: var(--form-input-min-width);
+            height: 100%;
+            padding: var(--form-field-padding);
+            font-family: var(--font-main-regular);
+
+            &::placeholder {
+                font-family: var(--font-main-regular);
+            }
+        }
+
+        input {
+            line-height: 100%;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .p-inputgroup-addon {
+            align-self: stretch;
+            border: 0;
+            min-width: inherit;
+            padding: 0 0.5rem;
+            flex: 0;
+            display: flex;
+            align-items: center;
+            background: var(--form-field-addon-background);
+
+            &.prefix {
+                border-right: var(--form-field-border-width) solid var(--form-field-border);
+                min-width: var(--prefix-width, inherit);
+                white-space: nowrap;
+            }
+
+            &.suffix {
+                white-space: nowrap;
+                border-left: var(--form-field-border-width) solid var(--form-field-border);
+
+                &.password {
+                    cursor: pointer;
+
+                    &.active {
+                        background: var(--orangelight);
+                        color: var(--mainorange);
+                    }
+                }
+            }
+
+            &.option {
+                padding: 0;
+            }
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--form-field-border-hover);
+        }
+    }
+
+    .help {
+        background: var(--mainorangelight);
+        border: var(--form-field-border-width) solid var(--mainorange);
+        color: var(--mainorange);
+        border-radius: var(--form-field-border-radius);
+        margin-top: 5px;
+        padding: 5px;
+        font-size: var(--font-size-mini);
+        text-transform: uppercase;
+
+        &::ng-deep {
+            dl {
+                margin: 0;
+
+                dt {
+                    font-family: var(--font-main-bold);
+                }
+
+                dd {
+                    margin: 0;
+
+                    label {
+                    }
+
+                    .value {
+                        font-family: var(--font-main-bold);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* READONLY */
+
+:host(.readonly) {
+    .p-inputgroup {
+        textarea,
+        input {
+            cursor: default;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--form-field-border);
+        }
+    }
+}
+
+:host-context(fd-input-calendar .readonly) {
+    .p-inputgroup {
+        textarea,
+        input {
+            cursor: pointer;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--form-field-border-hover);
+        }
+    }
+}
+
+/* REQUIRED */
+
+:host(.required) {
+    label {
+        &::after {
+            content: '*';
+        }
+    }
+}
+
+/* STATE INVALID */
+
+:host(.touched.invalid) {
+    --form-field-border: var(--form-field-error-border);
+    --form-field-background: var(--form-field-error-background);
+}
+
+/* STATE DISABLED */
+
+:host(.disabled) {
+    .p-inputgroup {
+        opacity: 0.8;
+        cursor: not-allowed;
+
+        & > * {
+            pointer-events: none;
+        }
+
+        &:hover,
+        &:focus {
+            border-color: var(--form-field-border);
+        }
+    }
+}
+
+/* SPECIFIC LABEL LEFT */
+
+:host(.labelLeft) {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* SPECIFIC INPUT ICON ONLY */
+
+:host(.inputIconOnly) {
+    .p-inputgroup {
+        border-radius: 100vh;
+        width: 28px;
+        height: 28px;
+        justify-content: center;
+    }
+}
+
+/* SPECIFIC STEPFORM */
+
+:host-context(.stepForm, .p-overlaypanel) {
+    .p-inputgroup {
+        --button-font-family: var(--font-main-regular);
+        --button-font-size: var(--font-size-normal);
+        --button-height: var(--button-height-big);
+        --form-field-height: var(--form-input-height-big);
+        --form-field-font-size: var(--font-size-normal);
+    }
+}
+
+:host-context(.stepForm .formBlock) {
+    align-items: center;
+
+    .p-inputgroup {
+        width: fit-content;
+    }
+
+    label {
+        color: var(--mainorange);
+        font-size: var(--font-size-title);
+        margin-bottom: 0.5rem;
+        text-transform: inherit;
+    }
+}
+
+:host-context(.stepForm .formBlock .formRow) {
+    label {
+        font-size: var(--font-size-normal);
+        color: var(--black);
+        margin-bottom: 0;
+        text-align: left;
+        text-transform: inherit;
+    }
+    .help {
+        text-align: left;
+    }
+}
+
+:host-context(.p-overlaypanel .p-overlaypanel-content .p-datatable-wrapper) {
+    --form-field-height: var(--form-input-height);
+}
+
+:host-context(app-post-it) {
+    --form-field-background: transparent;
+    --form-field-padding: 0 2px;
+
+    .p-inputgroup {
+        border-color: var(--white);
+
+        &:hover,
+        &:focus {
+            border-color: var(--form-field-border);
+        }
+    }
+}

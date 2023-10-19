@@ -1,0 +1,225 @@
+:host {
+    height: var(--button-height);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--button-color);
+    background-color: var(--button-background);
+    border: var(--button-border-width) solid var(--button-border);
+    padding: var(--button-padding);
+    line-height: 21px;
+    border-radius: var(--button-border-radius);
+    position: relative;
+    gap: 5px;
+    cursor: pointer;
+
+    fd-icon {
+        min-width: var(--icon-size);
+    }
+
+    .label {
+        flex: 1 1 auto;
+        font-family: var(--button-font-family);
+        font-size: var(--button-font-size);
+        user-select: none;
+    }
+
+    .miniBadge {
+        background: var(--badge-color, var(--mainorange));
+        color: var(--white);
+    }
+
+    .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+    }
+
+    &:hover {
+        filter: brightness(95%);
+    }
+
+    &.disabled {
+        opacity: var(--button-opacity, 0.5);
+        cursor: not-allowed;
+    }
+
+    &.withTooltip {
+        padding: var(--button-padding);
+        padding-left: 0;
+    }
+}
+
+:host(.smallest) {
+    width: fit-content;
+    white-space: nowrap;
+}
+
+:host(.save) {
+    --button-background: var(--save);
+    --button-color: var(--white);
+    --button-border: var(--save);
+
+    &.disabled {
+        --button-background: var(--white);
+        --button-color: var(--grey);
+        --button-border: var(--grey);
+    }
+
+    &.noValid {
+        --button-background: var(--mainalertlight);
+        --button-color: var(--mainalert);
+        --button-border: var(--mainalert);
+        animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+    }
+}
+
+:host(.loading) {
+    .icon,
+    .label {
+        opacity: 0;
+    }
+}
+
+:host(.active) {
+    color: var(--button-background);
+    background-color: var(--button-background-active);
+    border: 1px solid var(--button-background);
+}
+
+:host(.bigBtn) {
+    --button-padding: 0.75rem 1rem;
+    --button-font-size: var(--font-size-normal);
+    --button-height: var(--button-height-big);
+}
+
+:host(.iconOnly) {
+    display: inline-grid;
+    padding: unset;
+    justify-content: center;
+    align-content: center;
+    --button-border-radius: 50%;
+    width: var(--button-icononly-size);
+    min-width: var(--button-icononly-size);
+    height: var(--button-icononly-size);
+
+    fd-icon {
+        margin-right: 0;
+    }
+
+    .label {
+        display: none;
+    }
+
+    .miniBadge.absolute {
+        top: -4px;
+        right: -4px;
+    }
+}
+
+:host(.noBorder) {
+    border: none;
+}
+
+:host(.link) {
+    border: none;
+    font-family: var(--font-main-regular);
+    --button-background: transparent;
+    text-decoration: underline;
+}
+
+:host(.breadcrumb) {
+    border: none;
+    font-family: var(--font-main-regular);
+    --button-background: transparent;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+:host(.breadcrumbMenu) {
+    flex-direction: row-reverse;
+    --button-border: var(--form-field-border);
+}
+
+:host(.hidden) {
+    opacity: 0;
+}
+
+/* CRITERIA EXCEPTION */
+:host(.fakeSelect) {
+    flex-direction: row-reverse;
+
+    fd-icon {
+        transform: rotate(90deg);
+    }
+}
+
+fd-button + :host {
+    margin-left: 0.5rem;
+}
+
+:host-context(fd-dropdown.injection, fd-entity-picker.injection) {
+    --button-background: var(--form-field-background);
+    --button-border: var(--form-field-border);
+    --button-border-width: 1px;
+    --button-border-radius: var(--borderRadiusMini);
+
+    &:hover {
+        --button-border: var(--mainblue);
+    }
+}
+
+:host-context(fd-dropdown.injection fd-simplified-creation, fd-entity-picker.injection fd-simplified-creation) {
+    --form-field-background: var(--mainblue);
+    --form-field-border: var(--white);
+    --button-color: var(--white);
+}
+
+:host-context(fd-upload-file, .dropdownButton) {
+    width: 100%;
+    --button-border-radius: 0;
+    --button-background: transparent;
+    --button-border-width: 0;
+}
+
+:host-context(.multiline) {
+    --button-border-radius: 0;
+    --button-background: var(--mainorange);
+    --button-color: var(--white);
+    --button-border-width: 0;
+    height: inherit;
+    padding: 0.5rem;
+    --icon-size: 24px;
+}
+
+:host-context(.select) {
+    width: 100%;
+    flex-direction: row-reverse;
+    --button-font-size: var(--form-field-font-size);
+    --button-border-radius: 0;
+    --button-background: transparent;
+    --button-border-width: 0;
+
+    fd-icon {
+        transform: rotate(90deg);
+    }
+
+    &.withTooltip {
+        padding: var(--button-padding);
+        padding-right: 0;
+    }
+}
+
+:host-context(.select fd-tooltip) {
+    fd-icon {
+        transform: rotate(0);
+    }
+}
+
+:host-context(.buttonSuffix) {
+    --button-height: 24px;
+}

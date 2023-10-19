@@ -1,0 +1,151 @@
+:host {
+    --connected-layout-transition-delay: 0.8s;
+    --global-min-width: 950px;
+    --invoked-widget-width: 0px;
+    --invoked-widget-min-width: calc(var(--button-icononly-size) + 2px + 4rem);
+    --invoked-widget-max-width: 950px;
+    --connected-layout-width: calc(100vw - var(--invoked-widget-width));
+    --connected-layout-min-width: calc(var(--global-min-width) - var(--invoked-widget-min-width));
+    position: relative;
+    background: var(--mainbackground);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    min-width: var(--global-min-width);
+    overflow-x: hidden;
+
+    @keyframes resize {
+        0% {
+            transform: scale(1, 1);
+        }
+
+        50% {
+            transform: scale(1.5, 1.5);
+        }
+
+        100% {
+            transform: scale(1, 1);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            transform: rotate(0deg) scale(1);
+        }
+
+        50% {
+            transform: rotate(90deg) scale(1.4);
+        }
+
+        100% {
+            transform: rotate(0deg) scale(1);
+        }
+    }
+
+    .screenMessage {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        figure {
+            margin: 0;
+            padding: 0;
+
+            img {
+                width: 60px;
+            }
+        }
+
+        h1 {
+            margin-bottom: 0;
+            font-size: var(--font-size-title);
+            text-align: center;
+        }
+
+        p {
+            max-width: 480px;
+            text-align: center;
+        }
+
+        fd-icon {
+            margin-top: 1rem;
+
+            &.iconScreenResize {
+                animation: resize 1s ease infinite;
+                color: var(--mainorange);
+            }
+
+            &.iconScreenRotate {
+                animation: rotate 1s ease infinite;
+                color: var(--mainorange);
+            }
+        }
+    }
+
+    #connectedLayout {
+        position: relative;
+        transition: width var(--connected-layout-transition-delay) ease;
+        display: grid;
+        grid-template-areas:
+            'navbar'
+            'breadcrumb'
+            'pagecontent';
+        height: 100vh;
+        width: var(--connected-layout-width);
+        grid-gap: 0;
+        grid-template-columns: auto;
+        grid-template-rows: fit-content(0) fit-content(0) auto;
+        position: relative;
+        border-radius: var(--accountMenuBorderRadius);
+
+        app-navbar {
+            grid-area: navbar;
+            height: var(--navbarHeight);
+        }
+
+        fd-breadcrumb {
+            grid-area: breadcrumb;
+            height: var(--breadcrumbHeight);
+            background: inherit;
+            border: none;
+            padding: 0 120px 0 1rem;
+        }
+
+        .page-content {
+            grid-area: pagecontent;
+            position: relative;
+            overflow: hidden;
+            min-width: var(--connected-layout-min-width);
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+        }
+    }
+
+    app-widget-table {
+        background: var(--mainbackground);
+        z-index: 2;
+        width: var(--invoked-widget-width);
+        max-width: var(--invoked-widget-max-width);
+        transition: width var(--connected-layout-transition-delay) ease;
+    }
+
+    &.invokedWidget {
+        --invoked-widget-width: var(--invoked-widget-min-width);
+
+        &.largeWidget {
+            --invoked-widget-width: var(--invoked-widget-max-width);
+
+            #connectedLayout {
+                filter: blur(2px);
+                pointer-events: none;
+            }
+        }
+    }
+}

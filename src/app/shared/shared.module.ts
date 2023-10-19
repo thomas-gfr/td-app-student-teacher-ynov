@@ -19,11 +19,16 @@ import { MessageService } from 'primeng/api';
 import { ButtonModule } from 'primeng/button';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
-import { BrowserModule } from '@angular/platform-browser';
+import { ButtonComponent } from './components/button/button.component';
+import { InputTextComponent } from './components/inputs/input-text/input-text.component';
+import { IconComponent } from './components/icon/icon.component';
 
 registerLocaleData(localeFr);
 
 const COMPONENTS = [
+  ButtonComponent,
+  InputTextComponent,
+  IconComponent
 ];
 
 const PIPES = [
@@ -34,12 +39,10 @@ const DIRECTIVES = [
 
 const PRIMENG = [
   MenubarModule,
-  BrowserModule,
   TableModule,
   DialogModule,
   ButtonModule,
   InputTextModule,
-  FormsModule,
   ReactiveFormsModule,
   CalendarModule,
   CheckboxModule,
@@ -57,8 +60,6 @@ const PRIMENG = [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    FormsModule,
-    ReactiveFormsModule,
     ...PRIMENG,
   ],
   providers: [
@@ -68,11 +69,11 @@ const PRIMENG = [
     MessageService
   ],
   declarations: [
-    // ...COMPONENTS,
+    ...COMPONENTS,
     //  ...PIPES, ...DIRECTIVES
     ],
   exports: [
-    // ...COMPONENTS, 
+    ...COMPONENTS, 
     // ...PIPES, ...DIRECTIVES, 
     ...PRIMENG]
 })

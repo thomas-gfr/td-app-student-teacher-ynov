@@ -1,0 +1,34 @@
+<label *ngIf="label">{{ label }}</label>
+<div [ngClass]="{ 'p-inputgroup': true}">
+    <div *ngIf="inject" class="p-inputgroup-addon option">
+        <ng-content></ng-content>
+    </div>
+    <span *ngIf="prefix" class="p-inputgroup-addon prefix">{{ prefix }}</span>
+    <input
+        #input
+        [type]="type"
+        [readOnly]="readonly"
+        (input)="onInput()"
+        (focus)="onFocus()"
+        (blur)="onBlur($event)"
+        (keydown)="onKeyDown($event)"
+        (keyup)="onKeyUp($event)"
+        [placeholder]="placeholder"
+        [formControl]="control"
+        [size]="control.value?.length > 0 ? control.value.length : 1"
+        (paste)="onPaste($event)"
+    />
+    <span
+        *ngIf="suffixIcon || initType === 'password'"
+        [ngClass]="{
+            'p-inputgroup-addon': true,
+            suffix: true,
+            password: initType === 'password',
+            active: initType === 'password' && type === 'string'
+        }"
+        (click)="onSuffixClick($event)"
+    >
+        <td-icon [name]="suffixIcon || 'icon-eye'"></td-icon>
+    </span>
+</div>
+<p *ngIf="help" class="help" [innerHTML]="help"></p>

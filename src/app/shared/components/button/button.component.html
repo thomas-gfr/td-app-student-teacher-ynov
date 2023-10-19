@@ -1,0 +1,5 @@
+<td-icon *ngIf="icon" class="icon" [name]="icon" [size]="iconSize"></td-icon>
+<td-icon *ngIf="iconReset" color="greystrong" class="icon" [name]="iconReset" (click)="reset($event)" [size]="16"></td-icon>
+<span *ngIf="label" [ngClass]="{ label: true, truncate: !multiline }">{{ label }}</span>
+<span *ngIf="badge !== undefined" [ngClass]="{ miniBadge: true, absolute: icon && !label }">{{ badge }}</span>
+<td-icon *ngIf="isLoading" class="loader" [name]="iconLoader" [size]="21"></td-icon>

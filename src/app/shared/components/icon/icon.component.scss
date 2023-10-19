@@ -1,0 +1,16 @@
+:host {
+    display: inline-block;
+    min-width: var(--icon-size);
+    max-width: var(--icon-size);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    background-color: var(--colorIcon, currentColor);
+    -webkit-mask: var(--svgurl) no-repeat center;
+    mask: var(--svgurl) no-repeat center;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+}
+
+:host(:not(:first-of-type)) {
+    margin-left: 10px;
+}
