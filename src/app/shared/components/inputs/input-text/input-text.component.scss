@@ -29,10 +29,10 @@
         position: absolute;
         top: 1px;
         right: 0.5rem;
-        --form-field-background: var(--orangelight);
-        --button-color: var(--mainorange);
-        --form-field-border: var(--mainorange);
-        --form-field-border-hover: var(--mainorange);
+        --form-field-background: var(--secondaryColorLight);
+        --button-color: var(--secondaryColor);
+        --form-field-border: var(--secondaryColor);
+        --form-field-border-hover: var(--secondaryColor);
 
         &.active {
             opacity: 1;
@@ -62,11 +62,11 @@
         border-radius: 50vh;
         background-color: var(--white);
         border: none;
-        color: var(--mainorange);
+        color: var(--secondaryColor);
         transition: box-shadow 0.5s ease;
 
         &:focus-within {
-            box-shadow: 0 0 0.5rem 0 var(--mainorange);
+            box-shadow: 0 0 0.5rem 0 var(--secondaryColor);
         }
 
         input {
@@ -74,7 +74,7 @@
             font-size: var(--font-size-normal);
 
             &::placeholder {
-                color: var(--mainorange);
+                color: var(--secondaryColor);
             }
         }
     }

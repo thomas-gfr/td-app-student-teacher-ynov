@@ -4,123 +4,121 @@
   max-width: 100%;
 
   label {
-    font-family: var(--font-main-bold);
-    font-size: var(--font-size-mini);
-    text-transform: uppercase;
+      font-family: var(--font-main-bold);
+      font-size: var(--font-size-mini);
+      text-transform: uppercase;
   }
 
   .p-inputgroup {
-    position: relative;
-    height: var(--form-field-height);
-    border: var(--form-field-border-width) solid var(--form-field-border);
-    border-radius: var(--form-field-border-radius);
-    overflow: hidden;
-    display: flex;
-    flex-direction: var(--form-field-direction);
-    align-items: center;
-    font-size: var(--font-size-mini);
-    font-family: var(--font-main-bold);
-    background: var(--form-field-background);
-    max-width: 100%;
-
-    textarea,
-    input {
-      background: var(--form-field-background);
-      border-radius: 0;
-      border: none;
-      outline: none;
-      width: 100%;
-      min-width: var(--form-input-min-width);
-      height: 100%;
-      padding: var(--form-field-padding);
-      font-family: var(--font-main-regular);
-
-      &::placeholder {
-        font-family: var(--font-main-regular);
-      }
-    }
-
-    input {
-      line-height: 100%;
-    }
-
-    textarea {
-      resize: none;
-    }
-
-    .p-inputgroup-addon {
-      align-self: stretch;
-      border: 0;
-      min-width: inherit;
-      padding: 0 0.5rem;
-      flex: 0;
+      position: relative;
+      height: var(--form-field-height);
+      border: var(--form-field-border-width) solid var(--form-field-border);
+      border-radius: var(--form-field-border-radius);
+      overflow: hidden;
       display: flex;
+      flex-direction: var(--form-field-direction);
       align-items: center;
-      background: var(--form-field-addon-background);
+      font-size: var(--font-size-mini);
+      font-family: var(--font-main-bold);
+      background: var(--form-field-background);
+      max-width: 100%;
 
-      &.prefix {
-        border-right: var(--form-field-border-width) solid
-          var(--form-field-border);
-        min-width: var(--prefix-width, inherit);
-        white-space: nowrap;
-      }
+      textarea,
+      input {
+          background: var(--form-field-background);
+          border-radius: 0;
+          border: none;
+          outline: none;
+          width: 100%;
+          min-width: var(--form-input-min-width);
+          height: 100%;
+          padding: var(--form-field-padding);
+          font-family: var(--font-main-regular);
 
-      &.suffix {
-        white-space: nowrap;
-        border-left: var(--form-field-border-width) solid
-          var(--form-field-border);
-
-        &.password {
-          cursor: pointer;
-
-          &.active {
-            background: var(--orangelight);
-            color: var(--mainorange);
+          &::placeholder {
+              font-family: var(--font-main-regular);
           }
-        }
       }
 
-      &.option {
-        padding: 0;
+      input {
+          line-height: 100%;
       }
-    }
 
-    &:hover,
-    &:focus {
-      border-color: var(--form-field-border-hover);
-    }
+      textarea {
+          resize: none;
+      }
+
+      .p-inputgroup-addon {
+          align-self: stretch;
+          border: 0;
+          min-width: inherit;
+          padding: 0 0.5rem;
+          flex: 0;
+          display: flex;
+          align-items: center;
+          background: var(--form-field-addon-background);
+
+          &.prefix {
+              border-right: var(--form-field-border-width) solid var(--form-field-border);
+              min-width: var(--prefix-width, inherit);
+              white-space: nowrap;
+          }
+
+          &.suffix {
+              white-space: nowrap;
+              border-left: var(--form-field-border-width) solid var(--form-field-border);
+
+              &.password {
+                  cursor: pointer;
+
+                  &.active {
+                      background: var(--secondaryColorLight);
+                      color: var(--secondaryColor);
+                  }
+              }
+          }
+
+          &.option {
+              padding: 0;
+          }
+      }
+
+      &:hover,
+      &:focus {
+          border-color: var(--form-field-border-hover);
+      }
   }
 
   .help {
-    background: var(--mainorangelight);
-    border: var(--form-field-border-width) solid var(--mainorange);
-    color: var(--mainorange);
-    border-radius: var(--form-field-border-radius);
-    margin-top: 5px;
-    padding: 5px;
-    font-size: var(--font-size-mini);
-    text-transform: uppercase;
+      background: var(--secondaryColorlight);
+      border: var(--form-field-border-width) solid var(--secondaryColor);
+      color: var(--secondaryColor);
+      border-radius: var(--form-field-border-radius);
+      margin-top: 5px;
+      padding: 5px;
+      font-size: var(--font-size-mini);
+      text-transform: uppercase;
 
-    &::ng-deep {
-      dl {
-        margin: 0;
+      &::ng-deep {
+          dl {
+              margin: 0;
 
-        dt {
-          font-family: var(--font-main-bold);
-        }
+              dt {
+                  font-family: var(--font-main-bold);
+              }
 
-        dd {
-          margin: 0;
+              dd {
+                  margin: 0;
 
-          label {
+                  label {
+                  }
+
+                  .value {
+                      font-family: var(--font-main-bold);
+                  }
+              }
           }
-
-          .value {
-            font-family: var(--font-main-bold);
-          }
-        }
       }
-    }
   }
 }
 
@@ -128,29 +126,29 @@
 
 :host(.readonly) {
   .p-inputgroup {
-    textarea,
-    input {
-      cursor: default;
-    }
+      textarea,
+      input {
+          cursor: default;
+      }
 
-    &:hover,
-    &:focus {
-      border-color: var(--form-field-border);
-    }
+      &:hover,
+      &:focus {
+          border-color: var(--form-field-border);
+      }
   }
 }
 
 :host-context(fd-input-calendar .readonly) {
   .p-inputgroup {
-    textarea,
-    input {
-      cursor: pointer;
-    }
+      textarea,
+      input {
+          cursor: pointer;
+      }
 
-    &:hover,
-    &:focus {
-      border-color: var(--form-field-border-hover);
-    }
+      &:hover,
+      &:focus {
+          border-color: var(--form-field-border-hover);
+      }
   }
 }
 
@@ -158,9 +156,9 @@
 
 :host(.required) {
   label {
-    &::after {
-      content: "*";
-    }
+      &::after {
+          content: '*';
+      }
   }
 }
 
@@ -175,17 +173,17 @@
 
 :host(.disabled) {
   .p-inputgroup {
-    opacity: 0.8;
-    cursor: not-allowed;
+      opacity: 0.8;
+      cursor: not-allowed;
 
-    & > * {
-      pointer-events: none;
-    }
+      & > * {
+          pointer-events: none;
+      }
 
-    &:hover,
-    &:focus {
-      border-color: var(--form-field-border);
-    }
+      &:hover,
+      &:focus {
+          border-color: var(--form-field-border);
+      }
   }
 }
 
@@ -201,10 +199,10 @@
 
 :host(.inputIconOnly) {
   .p-inputgroup {
-    border-radius: 100vh;
-    width: 28px;
-    height: 28px;
-    justify-content: center;
+      border-radius: 100vh;
+      width: 28px;
+      height: 28px;
+      justify-content: center;
   }
 }
 
@@ -212,11 +210,11 @@
 
 :host-context(.stepForm, .p-overlaypanel) {
   .p-inputgroup {
-    --button-font-family: var(--font-main-regular);
-    --button-font-size: var(--font-size-normal);
-    --button-height: var(--button-height-big);
-    --form-field-height: var(--form-input-height-big);
-    --form-field-font-size: var(--font-size-normal);
+      --button-font-family: var(--font-main-regular);
+      --button-font-size: var(--font-size-normal);
+      --button-height: var(--button-height-big);
+      --form-field-height: var(--form-input-height-big);
+      --form-field-font-size: var(--font-size-normal);
   }
 }
 
@@ -224,27 +222,27 @@
   align-items: center;
 
   .p-inputgroup {
-    width: fit-content;
+      width: fit-content;
   }
 
   label {
-    color: var(--mainorange);
-    font-size: var(--font-size-title);
-    margin-bottom: 0.5rem;
-    text-transform: inherit;
+      color: var(--secondaryColor);
+      font-size: var(--font-size-title);
+      margin-bottom: 0.5rem;
+      text-transform: inherit;
   }
 }
 
 :host-context(.stepForm .formBlock .formRow) {
   label {
-    font-size: var(--font-size-normal);
-    color: var(--black);
-    margin-bottom: 0;
-    text-align: left;
-    text-transform: inherit;
+      font-size: var(--font-size-normal);
+      color: var(--black);
+      margin-bottom: 0;
+      text-align: left;
+      text-transform: inherit;
   }
   .help {
-    text-align: left;
+      text-align: left;
   }
 }
 
@@ -257,11 +255,11 @@
   --form-field-padding: 0 2px;
 
   .p-inputgroup {
-    border-color: var(--white);
+      border-color: var(--white);
 
-    &:hover,
-    &:focus {
-      border-color: var(--form-field-border);
-    }
+      &:hover,
+      &:focus {
+          border-color: var(--form-field-border);
+      }
   }
 }

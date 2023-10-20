@@ -78,12 +78,12 @@
 
             &.iconScreenResize {
                 animation: resize 1s ease infinite;
-                color: var(--mainorange);
+                color: var(--secondaryColor);
             }
 
             &.iconScreenRotate {
                 animation: rotate 1s ease infinite;
-                color: var(--mainorange);
+                color: var(--secondaryColor);
             }
         }
     }

@@ -1,9 +1,151 @@
-::root {
-  --theme-foreground-color: #333269;
-  --theme-background-color: #f0eff5;
-  --theme-primary-color: #5855d6;
-  --theme-secondary-color: #c0beff;
-  --theme-terciary-color: #9592a6;
-  --theme-white-color: #ffffff;
-  --theme-opaque-gray-color: #f8f8fc;
+:root {
+  --scrollbar-width: 0.5rem;
+
+  /* COLORS */
+  --black: #2e382e;
+  --black-rgb: 46, 56, 46;
+
+  --white: #ffffff;
+  --white-rgb: 255, 255, 255;
+
+  --grey: #cccccc;
+  --grey-rgb: 204, 204, 204;
+
+  --greymedium: #ced4da;
+  --greymedium-rgb: 206, 212, 218;
+
+  --greystrong: #666666;
+  --greystrong-rgb: 102, 102, 102;
+
+  --greylight: #e6e6e6;
+  --greylight-rgb: 230, 230, 230;
+
+  --primaryColor: #F0EFF5;
+  --primaryColor-rgb: 0, 105, 180;
+  --primaryColorLight: #F0EFF5;
+  --primaryColorLight-rgb: 236, 241, 244;
+
+  --secondaryColor: #333269;
+  --secondaryColor-rgb: 243, 146, 0;
+  --secondaryColorLight: #333269;
+  --secondaryColorLight-rgb: 250, 221, 204;
+
+  --terciaryColor: #9592a6;
+  --terciaryColorLight: #9592a6;
+
+  --mainalert: #ff0033;
+  --mainalert-rgb: 255, 0, 51;
+  --mainalertlight: #ffd9e1;
+  --mainalertlight-rgb: 255, 217, 225;
+
+  --mainsuccess: #4bb543;
+  --mainsuccess-rgb: 75, 181, 67;
+  --mainsuccesslight: #c4e6c6;
+  --mainsuccesslight-rgb: 196, 230, 198;
+
+  --mainwarning: var(--secondaryColor);
+  --maininfo: var(--primaryColor);
+
+  --mainbackground: var(--primaryColorLight);
+  --mainbackground-rgb: var(--primaryColorLight-rgb);
+  --secondbackground: var(--greylight);
+  --secondbackground-rgb: var(--greylight-rgb);
+
+  --delete: var(--mainalert);
+  --cancel: var(--secondaryColor);
+  --save: var(--mainsuccess);
+
+  --form-field-warning: var(--mainalert);
+  --form-field-warning-light: var(--mainalertlight);
+
+  --evenRowBackground: var(--white);
+  --oddRowBackground: var(--primaryColorLight);
+
+  /* FONTS */
+  --font-main-regular: 'fdMainRegular';
+  --font-main-medium: 'fdMainMedium';
+  --font-main-bold: 'fdMainBold';
+  --font-size-title: 22px;
+  --font-size-normal: 14px;
+  --font-size-mini: 11px;
+  --font-family: var(--font-main-regular);
+
+
+  /* ELEMENTS SIZES */
+  --navbarHeight: 80px;
+  --breadcrumbHeight: 40px;
+
+  /* PROPERTIES */
+  --borderRadiusBig: 12px;
+  --borderRadiusMini: 6px;
+
+  /* ICONS */
+  --icon-size: 14px;
+
+  /* BUTTONS */
+  --button-height: 32px;
+  --button-height-big: 40px;
+  --button-height-mini: 28px;
+  --button-icononly-size: 28px;
+
+  --button-color: currentColor;
+
+  --button-border: currentColor;
+  --button-border-width: 1px;
+  --button-border-radius: var(--borderRadiusMini);
+
+  --button-background: var(--white);
+  --button-background-active: var(--primaryColor);
+
+  --button-font-family: var(--font-main-bold);
+  --button-font-size: var(--font-size-normal);
+
+  --button-padding: 0 1rem;
+
+  /* FORMS */
+  --form-field-padding: 0 0.5rem;
+  --form-field-direction: row;
+  --form-field-height: var(--form-input-height);
+  --form-field-border-radius: var(--borderRadiusMini);
+  --form-field-background: var(--primaryColorLight);
+  --form-field-error-background: var(--form-field-warning-light);
+  --form-field-border: var(--greymedium);
+  --form-field-border-width: 1px;
+  --form-field-error-border: var(--form-field-warning);
+  --form-field-border-hover: var(--primaryColor);
+  --form-field-font-size: var(--font-size-mini);
+  --form-field-addon-background: var(--secondbackground);
+
+  --form-input-height: 30px;
+  --form-input-height-big: 40px;
+  --form-input-min-width: 40px;
+
+  --form-textarea-height: 150px;
+  --form-textarea-height-mini: 90px;
+
+  --form-switch-width: 40px;
+  --form-switch-height: 20px;
+  --form-switch-slider-size: 14px;
+  --form-switch-slider-spacing: 5px;
+  --form-switch-transition-delay: 0.5s;
+  --form-switch-background-off: var(--secondbackground);
+  --form-switch-background-on: var(--primaryColor);
+
+  /* OVERLAY */
+  --overlay-container-z-index: 1000;
+  --overlay-z-index: 1000;
+  --overlay-toast-stack-z-index: 10000;
+  --overlay-center-toast-z-index: 20000;
+  --overlay-backdrop-z-index: 1000;
+  --overlay-backdrop-color: rgba(0, 0, 0, 0.32);
+  --backdrop-animation-duration: 400ms;
+  --backdrop-animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  /* TABLE */
+  --table-cell-spacing: 1rem 0.5rem;
+  --table-forth-color: var(--secondaryColor);
+  --table-forth-color-light: var(--secondaryColorLight);
+  --fc-event-bg-color: var(--primaryColor);
+  --fc-event-border-color: var(--primaryColor);
+  --fc-event-text-color: var(--white);
 }

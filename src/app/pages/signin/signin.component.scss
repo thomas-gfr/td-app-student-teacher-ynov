@@ -1,0 +1,71 @@
+@import '/src/scss/themes/colors.scss';
+
+:host {
+    display: grid;
+    grid-template-columns: 50vw;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background: var(--white);
+
+    section {
+        display: grid;
+        height: 100%;
+        grid-template-rows: fit-content(0) auto fit-content(0);
+
+        content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+
+            form {
+                display: grid;
+                gap: 1rem;
+                width: 100%;
+                max-width: 480px;
+                padding: 1rem;
+                justify-items: center;
+
+                td-input-text {
+                    width: 100%;
+                    --form-field-height: 54px;
+                    --form-field-padding: 0 1rem;
+                    --form-input-min-width: 380px;
+                }
+
+                td-button {
+                    &.signin {
+                        width: fit-content;
+                        --button-height: 54px;
+                        --button-background: var(--secondaryColor);
+                        --button-color: var(--white);
+                        --button-font-size: 18px;
+                    }
+                }
+            }
+        }
+
+        figure {
+            margin: 1rem;
+
+            &.logo {
+                img {
+                    width: 280px;
+                    cursor: pointer;
+                }
+            }
+
+            &.nf {
+                display: flex;
+                align-items: flex-end;
+                gap: 1rem;
+
+                a {
+                    color: var(--black);
+                }
+            }
+        }
+    }
+}

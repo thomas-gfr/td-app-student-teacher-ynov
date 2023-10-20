@@ -7,7 +7,7 @@ const ROUTE: Routes = [
   {
     path: '',
     component: ConnectedLayoutComponent,
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
     children: [
       {
         path: '',

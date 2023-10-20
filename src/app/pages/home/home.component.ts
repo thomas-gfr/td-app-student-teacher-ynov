@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     ) {}
 
     public ngOnInit(): void {
+        console.log('toto')
     }
 
     public ngOnDestroy(): void {

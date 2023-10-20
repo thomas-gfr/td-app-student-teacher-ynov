@@ -25,7 +25,7 @@
     }
 
     .miniBadge {
-        background: var(--badge-color, var(--mainorange));
+        background: var(--badge-color, var(--secondaryColor));
         color: var(--white);
     }
 
@@ -158,7 +158,7 @@
     }
 }
 
-fd-button + :host {
+td-button + :host {
     margin-left: 0.5rem;
 }
 
@@ -169,12 +169,12 @@ fd-button + :host {
     --button-border-radius: var(--borderRadiusMini);
 
     &:hover {
-        --button-border: var(--mainblue);
+        --button-border: var(--primaryColor);
     }
 }
 
 :host-context(fd-dropdown.injection fd-simplified-creation, fd-entity-picker.injection fd-simplified-creation) {
-    --form-field-background: var(--mainblue);
+    --form-field-background: var(--primaryColor);
     --form-field-border: var(--white);
     --button-color: var(--white);
 }
@@ -188,7 +188,7 @@ fd-button + :host {
 
 :host-context(.multiline) {
     --button-border-radius: 0;
-    --button-background: var(--mainorange);
+    --button-background: var(--secondaryColor);
     --button-color: var(--white);
     --button-border-width: 0;
     height: inherit;
